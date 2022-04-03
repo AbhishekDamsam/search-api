@@ -1,0 +1,24 @@
+{
+  "name": "getir-api-search",
+  "version": "1.0.0",
+  "description": "Search in the database documents",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=16.13.1"
+  },
+  "author": "Abhishek Damsam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.3",
+    "joi": "17.6.0",
+    "mongodb": "4.4.1",
+    "winston": "3.6.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
