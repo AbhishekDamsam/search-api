@@ -51,7 +51,7 @@ npm run test
     * records will be an array of objects or blank array.
 
 ## Validation of input request payload
-* The input startDate and endDate must follow YYYY-MM-DD format for successful querying database.
+* The input startDate and endDate must follow YYYY-MM-DD format for successful querying database. Also startDate must not be greater than endDate.
 * minCount and maxCount should be greater than 0 and both are mandatory.
 * Validation messages are easily understandable. 
 
@@ -72,13 +72,13 @@ npm run test
 * Express server is created in app.js with all middleware functions assigned to it.
 * Database connection logic is placed in db-connect.js and also exposed few functions. These functions can
   be used across to query database.
-* Logger function is created using few configurations.
+* Logger function is created using winston configurations.
 * Response error is a derived class of Error to override the errors occurred.
-* All routes in the service is initialised in routes-init. Whenever a new module is created then it has to
+* All routes in the service is initialized in routes-init. Whenever a new module is created then it has to
   register here.
 * Search is one module which consists of search specific routes, joi-schemas, handler and manager.
 * Middleware functions like:
-    1. error-logger is used to catch the errors occurred in the service and logs it logger file.
+    1. error-logger is used to catch the errors occurred in the service and logs it in logger file.
     2. joi-validation validates the data against the joi schemas.
     3. response-logger logs all the http responses(both successful and unsuccessful) in logger file.
     4. set-headers sets any response headers. Here we can set or remove any other header information,
