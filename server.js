@@ -18,7 +18,7 @@ process.on('uncaughtException', function(err) {
 const start = async function () {
     await db.connect(mongoURL, Logger);
     const app = await server(Logger);
-    app.listen(PORT, function () {
+    app.listen(process.env.PORT || PORT, function () {
         //To display in terminal for developers
         console.log(`Express server listening on port http://localhost:${PORT}`);
         Logger.info(`Express server listening on port http://localhost:${PORT}`);
